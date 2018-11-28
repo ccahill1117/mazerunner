@@ -1,6 +1,21 @@
 
-<h2>You are in Level: <%= @game.levels[0] %></h2>
+<h2>You are in Level: <%= @@game.levels[@@game.current_level] %></h2>
 
-<p>You are in room <%= @game.levels[0].id%> </p>
+<% if @@game.current_distance == 0 %>
+  <%= <p>You are in the main room of level: <%= @@game.levels[@@game.current_level].id%> </p> %>
+<% elsif @@game.current_distance == 1 %>
+  <%= <p>You are 1 out from the main, in room <%= @@game.current_room %> </p>%>
+<% elsif @@game.current_distance == 2 %>
+  <%= <p>You are 2 out from the main, in room <%= @@game.current_room %> </p>%>
+<% else %>
+  <%= <p>You are afraid to continue, but you found a key! Go back and enter the next level! </p>%>
+
+
 
 <p>Please select a room to go to:</p>
+
+@
+
+<a href='/move_to/<%= @@game %>'>Room 1</a> <%  %>
+<%= %>
+<% %>
